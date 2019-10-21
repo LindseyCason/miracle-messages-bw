@@ -41,6 +41,16 @@ public class User extends Auditable
     @JsonIgnoreProperties("user")
     private List<UserRoles> userroles = new ArrayList<>();
 
+    /////
+    @OneToMany(mappedBy = "userid",
+            cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("users")
+    private List<Case> cases = new ArrayList<>();
+
+
+
+    /////
+
     @OneToMany(mappedBy = "user",
                cascade = CascadeType.ALL,
                orphanRemoval = true)
@@ -51,10 +61,7 @@ public class User extends Auditable
     {
     }
 
-    public User(String username,
-                String password,
-                String primaryemail,
-                List<UserRoles> userRoles)
+    public User(String username, String password, String primaryemail, List<UserRoles> userRoles)
     {
         setUsername(username);
         setPassword(password);
@@ -138,6 +145,22 @@ public class User extends Auditable
     {
         return useremails;
     }
+
+    /////
+
+
+    public void setCases(List<Case> cases)
+    {
+        this.cases = cases;
+    }
+
+    public List<Case> getCases() {
+        return cases;
+    }
+
+    //If there is a user ID less than 10000 return the case list, else don't return the case list.
+
+    /////
 
     public void setUseremails(List<Useremail> useremails)
     {
