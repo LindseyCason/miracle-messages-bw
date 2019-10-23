@@ -1,0 +1,8 @@
+-- INSERT INTO socialCase (caseid, caseFname, caseLname, caseAge, caseHometown, caseCurrentTown, caseContactInfo, caseNotes, caseIsSensitive ) VALUES (11,"Jessica", "Smith", 34, "ddddd", "ttttttttt", "555-5044444-5555", "tesddddddting", false);
+-- INSERT INTO socialCase (caseid, caseFname, caseLname, caseAge, caseHometown, caseCurrentTown, caseContactInfo,caseNotes,caseIsSensitive ) VALUES (12,"Lindsey", "Cason", 34, "Gainesville", "NewOrleans", "555-555-5555", "testing", false);
+-- INSERT INTO socialCase (caseid, caseFname, caseLname, caseAge, caseHometown, caseCurrentTown, caseContactInfo,caseNotes, caseIsSensitive ) VALUES (13, "afasdasd", "Cadddddson", 34, "sssssss", "aaaaaaa", "567-555-5555", "testing", false);
+--
+--
+-- alter sequence hibernate_sequence restart with 25;
+--
+-- -- Case c1 = new Case("Lindsey", "Cason", 34, "Gainesville", "NewOrleans", "555-555-5555", "testing", false);

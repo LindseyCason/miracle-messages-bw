@@ -3,11 +3,9 @@ package com.lambdaschool.starthere;
 import com.github.javafaker.Faker;
 import com.github.javafaker.service.FakeValuesService;
 import com.github.javafaker.service.RandomService;
-import com.lambdaschool.starthere.models.Role;
-import com.lambdaschool.starthere.models.User;
-import com.lambdaschool.starthere.models.UserRoles;
-import com.lambdaschool.starthere.models.Useremail;
+import com.lambdaschool.starthere.models.*;
 import com.lambdaschool.starthere.services.RoleService;
+import com.lambdaschool.starthere.services.SocialCaseService;
 import com.lambdaschool.starthere.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -26,6 +24,9 @@ public class SeedData implements CommandLineRunner
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    SocialCaseService socialCaseService;
 
 
     @Override
@@ -59,6 +60,30 @@ public class SeedData implements CommandLineRunner
                              "admin@mymail.local"));
 
         userService.save(u1);
+
+//        SocialCase c1 = new SocialCase("Lindsey", "Cason", 34, "Gainesville", "NewOrleans", "555-555-5555", "testing", false);
+////
+//        socialCaseService.save( c1 );
+
+//        this.caseFname = caseFname;
+//        this.caseLname = caseLname;
+//        this.caseAge = caseAge;
+//        this.caseHometown = caseHometown;
+//        this.caseCurrentTown = caseCurrentTown;
+//        this.caseContactInfo = caseContactInfo;
+//        this.caseNotes = caseNotes;
+//        this.caseIsSensitive = false;
+//        "caseAge": 55,
+//            "caseContactInfo": "555-555-5555 or Know to frequent McDonalds on 3rd St.",
+//            "caseCurrentTown": "New Orleans, LA",
+//            "caseFname": "John",
+//            "caseHometown": "Gainesville, FL",
+//            "caseId": 143,
+//            "caseIsSensitive": true,
+//            "caseLname": "Smith",
+//            "caseNotes": "John is a veteran and visits the VA once a month around the 5th",
+//            "caseSensitive": true
+
 
         // data, user
         ArrayList<UserRoles> datas = new ArrayList<>();
@@ -120,7 +145,7 @@ public class SeedData implements CommandLineRunner
                                                                     new RandomService());
         Faker nameFaker = new Faker(new Locale("en-US"));
 
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < 10; i++)
         {
             new User();
             User fakeUser;

@@ -1,0 +1,18 @@
+CASE MODEL
+
+{
+        "socialCaseFname": "Bob",
+        "socialCaseLname": "Jackson",
+        "socialCaseAge": "51",
+        "socialCaseHometown": "Baton Rouge",
+        "socialCaseCurrentTown": "New Orleans",
+        "socialCaseContactInfo": "Only available via email. bob@gmail.com",
+        "socialCaseNotes": "Bob checks his email once a week at the public library",
+        "socialCaseIsSensitive": true
+}
+
+CREATE NEW USER MODEL
+{
+
+
+}

@@ -17,7 +17,7 @@ import java.util.List;
 @Loggable
 @Entity
 @Table(name = "users")
-public class User extends Auditable
+public class User
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -42,12 +42,10 @@ public class User extends Auditable
     private List<UserRoles> userroles = new ArrayList<>();
 
     /////
-    @OneToMany(mappedBy = "userid",
+    @OneToMany(mappedBy = "user",
             cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("users")
-    private List<Case> cases = new ArrayList<>();
-
-
+    @JsonIgnoreProperties("user")
+    private List<SocialCase> socialCases = new ArrayList<>();
 
     /////
 
@@ -148,15 +146,14 @@ public class User extends Auditable
 
     /////
 
-
-    public void setCases(List<Case> cases)
-    {
-        this.cases = cases;
+    public List<SocialCase> getSocialCases() {
+        return socialCases;
     }
 
-    public List<Case> getCases() {
-        return cases;
+    public void setSocialCases(List<SocialCase> socialCases) {
+        this.socialCases = socialCases;
     }
+
 
     //If there is a user ID less than 10000 return the case list, else don't return the case list.
 
