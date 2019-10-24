@@ -85,8 +85,7 @@ public class SocialCase {
         this.user = user;
     }
 
-
-    public SocialCase(String jessica, String smith, String s, String ddddd, String ttttttttt, String s1, String tesddddddting, boolean b, String one, String two, String three, String four, String five, String six) {
+    public SocialCase(String gilmore, String happy, String s, String neverNever_land, Object o, Object o1, Object o2, boolean b, Object o3, Object o4, Object o5, Object o6, Object o7, Object o8) {
     }
 
 

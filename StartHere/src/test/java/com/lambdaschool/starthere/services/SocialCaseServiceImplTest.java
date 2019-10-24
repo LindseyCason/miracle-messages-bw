@@ -43,6 +43,7 @@ public class SocialCaseServiceImplTest {
     {
         assertEquals(0, socialCaseService.findAll(Pageable.unpaged()).size());
         //zero because there is no seed data
+        //fails when >0
     }
 
 

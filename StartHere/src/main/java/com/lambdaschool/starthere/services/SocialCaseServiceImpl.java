@@ -53,6 +53,19 @@ public class SocialCaseServiceImpl implements SocialCaseService {
         }
     }
 
+    @Transactional
+    @Override
+    public void deleteAll(Long id) throws EntityNotFoundException
+    {
+        if (findAll( Pageable.unpaged() ) == null)
+        {
+            socialcaserepo.deleteById(null);
+        } else
+        {
+            throw new EntityNotFoundException(Long.toString(id));
+        }
+    }
+
 
     @Override
     public SocialCase findSocialCaseById(long id) throws ResourceFoundException
