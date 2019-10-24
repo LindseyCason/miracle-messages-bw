@@ -60,5 +60,6 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                  .authenticationManager(authenticationManager);
         endpoints.pathMapping("/oauth/token",
                               "/login");
+
     }
 }

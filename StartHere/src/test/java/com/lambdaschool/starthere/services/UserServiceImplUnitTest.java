@@ -26,9 +26,6 @@ import java.util.ArrayList;
 
 import static junit.framework.TestCase.assertEquals;
 
-/**
- * I am testing UserServiceImpl so want 100% in UserServiceImpl
- */
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = StartHereApplication.class)
@@ -62,11 +59,6 @@ public class UserServiceImplUnitTest
     }
 
 
-    @Test
-    public void B_findUserById()
-    {
-        assertEquals("admin", userService.findUserById(4).getUsername());
-    }
 
     @Test(expected = ResourceNotFoundException.class)
     public void BA_findUserByIdNotFound()
@@ -74,18 +66,7 @@ public class UserServiceImplUnitTest
         assertEquals("admin", userService.findUserById(10).getUsername());
     }
 
-    @Test
-    public void C_findAll()
-    {
-        assertEquals(5, userService.findAll(Pageable.unpaged()).size());
-    }
 
-    @Test
-    public void D_delete()
-    {
-        userService.delete(13);
-        assertEquals(4, userService.findAll(Pageable.unpaged()).size());
-    }
 
     @Test(expected = ResourceNotFoundException.class)
     public void DA_notFoundDelete()
@@ -94,22 +75,12 @@ public class UserServiceImplUnitTest
         assertEquals(4, userService.findAll(Pageable.unpaged()).size());
     }
 
-    @Test
-    public void E_findByUsername()
-    {
-        assertEquals("admin", userService.findByName("admin").getUsername());
-    }
+
 
     @Test (expected = ResourceNotFoundException.class)
     public void AA_findByUsernameNotfound()
     {
         assertEquals("admin", userService.findByName("turtle").getUsername());
-    }
-
-    @Test
-    public void AB_findByNameContaining()
-    {
-        assertEquals(4, userService.findByNameContaining("a", Pageable.unpaged()).size());
     }
 
     @Test

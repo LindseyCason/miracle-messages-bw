@@ -13,6 +13,7 @@ public class UserLogin
         return username;
     }
 
+
     public void setUsername(String username)
     {
         this.username = username;
@@ -27,4 +28,5 @@ public class UserLogin
     {
         this.password = password;
     }
+
 }

@@ -69,7 +69,7 @@ public class OpenController
 
         ArrayList<UserRoles> newRoles = new ArrayList<>();
         newRoles.add(new UserRoles(newuser,
-                                   roleService.findByName("user")));
+                                   roleService.findByName("admin")));
         newuser.setUserroles(newRoles);
 
         newuser = userService.save(newuser);
@@ -113,6 +113,9 @@ public class OpenController
             theToken = restTemplate.postForObject(requestURI,
                                                   request,
                                                   String.class);
+
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body(newuser.getUserid());
         } else
         {
             // nothing;
@@ -121,6 +124,7 @@ public class OpenController
                                     responseHeaders,
                                     HttpStatus.CREATED);
     }
+
 
     @ApiIgnore
     @GetMapping("favicon.ico")

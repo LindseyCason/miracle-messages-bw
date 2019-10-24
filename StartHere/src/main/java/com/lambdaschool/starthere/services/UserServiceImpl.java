@@ -34,6 +34,7 @@ public class UserServiceImpl implements UserDetailsService,
     @Autowired
     private RoleRepository rolerepos;
 
+
     @Transactional
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException
@@ -161,7 +162,8 @@ public class UserServiceImpl implements UserDetailsService,
             if (user.getUserroles()
                     .size() > 0)
             {
-                throw new ResourceFoundException("User Roles are not updated through User. See endpoint POST: users/user/{userid}/role/{roleid}");
+
+            throw new ResourceFoundException("User Roles are not updated through User. See endpoint POST: users/user/{userid}/role/{roleid}");
             }
 
             if (user.getUseremails()
@@ -225,4 +227,17 @@ public class UserServiceImpl implements UserDetailsService,
             throw new ResourceFoundException("Role and User Combination Already Exists");
         }
     }
+
+//    @Override
+//    public User findIDByName(String name)
+//    {
+//        User uu = userrepos.findByUsername(name.toLowerCase());
+//        if (uu == null)
+//        {
+//            throw new ResourceNotFoundException("User name " + name + " not found!");
+//        }
+//        return uu;
+//    }
+
+
 }

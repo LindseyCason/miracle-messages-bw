@@ -3,11 +3,9 @@ package com.lambdaschool.starthere;
 import com.github.javafaker.Faker;
 import com.github.javafaker.service.FakeValuesService;
 import com.github.javafaker.service.RandomService;
-import com.lambdaschool.starthere.models.Role;
-import com.lambdaschool.starthere.models.User;
-import com.lambdaschool.starthere.models.UserRoles;
-import com.lambdaschool.starthere.models.Useremail;
+import com.lambdaschool.starthere.models.*;
 import com.lambdaschool.starthere.services.RoleService;
+import com.lambdaschool.starthere.services.SocialCaseService;
 import com.lambdaschool.starthere.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -59,6 +57,7 @@ public class SeedData implements CommandLineRunner
                              "admin@mymail.local"));
 
         userService.save(u1);
+
 
         // data, user
         ArrayList<UserRoles> datas = new ArrayList<>();
@@ -120,7 +119,7 @@ public class SeedData implements CommandLineRunner
                                                                     new RandomService());
         Faker nameFaker = new Faker(new Locale("en-US"));
 
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < 10; i++)
         {
             new User();
             User fakeUser;
@@ -139,5 +138,4 @@ public class SeedData implements CommandLineRunner
                                        fakeValuesService.bothify("????##@gmail.com")));
             userService.save(fakeUser);
         }
-    }
-}
+}}

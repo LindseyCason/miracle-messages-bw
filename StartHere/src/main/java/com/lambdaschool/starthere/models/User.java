@@ -17,7 +17,7 @@ import java.util.List;
 @Loggable
 @Entity
 @Table(name = "users")
-public class User extends Auditable
+public class User
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -41,6 +41,14 @@ public class User extends Auditable
     @JsonIgnoreProperties("user")
     private List<UserRoles> userroles = new ArrayList<>();
 
+    /////
+    @OneToMany(mappedBy = "user",
+            cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("user")
+    private List<SocialCase> socialCases = new ArrayList<>();
+
+    /////
+
     @OneToMany(mappedBy = "user",
                cascade = CascadeType.ALL,
                orphanRemoval = true)
@@ -51,10 +59,7 @@ public class User extends Auditable
     {
     }
 
-    public User(String username,
-                String password,
-                String primaryemail,
-                List<UserRoles> userRoles)
+    public User(String username, String password, String primaryemail, List<UserRoles> userRoles)
     {
         setUsername(username);
         setPassword(password);
@@ -138,6 +143,15 @@ public class User extends Auditable
     {
         return useremails;
     }
+
+    public List<SocialCase> getSocialCases() {
+        return socialCases;
+    }
+
+    public void setSocialCases(List<SocialCase> socialCases) {
+        this.socialCases = socialCases;
+    }
+
 
     public void setUseremails(List<Useremail> useremails)
     {

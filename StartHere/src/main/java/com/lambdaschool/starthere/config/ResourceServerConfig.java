@@ -1,6 +1,7 @@
 package com.lambdaschool.starthere.config;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
@@ -34,7 +35,10 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter
                          "/swagger-ui.html",
                          "/v2/api-docs",
                          "/webjars/**",
-                         "/createnewuser")
+                         "/createnewuser",
+                    "/socialCases/socialCases",//this shows all cases
+                    "/socialCases/socialCases/add" //this adds a case
+                             , "/login")
             .permitAll()
             .antMatchers("/users/**",
                          "/useremails/**",
@@ -47,6 +51,9 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter
             //
             // restrict based on HttpMethod and endpoint
             // .antMatchers(HttpMethod.GET, "/users/user/**").hasAnyRole("USER")
+                .antMatchers( HttpMethod.DELETE, "/socialCases/**").hasAnyRole("ADMIN")
+                .antMatchers( HttpMethod.PUT, "/socialCases/**").hasAnyRole("ADMIN")
+                .antMatchers( HttpMethod.POST, "/socialCases/**").hasAnyRole("ADMIN")
             .antMatchers("/roles/**",
                          "/actuator/**")
             .hasAnyRole("ADMIN")
