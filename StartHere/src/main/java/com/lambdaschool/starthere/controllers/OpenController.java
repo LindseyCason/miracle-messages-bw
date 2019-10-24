@@ -125,6 +125,7 @@ public class OpenController
                                     HttpStatus.CREATED);
     }
 
+
     @ApiIgnore
     @GetMapping("favicon.ico")
     void returnNoFavicon()

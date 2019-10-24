@@ -1,10 +1,8 @@
 package com.lambdaschool.starthere;
 
-import com.lambdaschool.starthere.models.Role;
-import com.lambdaschool.starthere.models.User;
-import com.lambdaschool.starthere.models.UserRoles;
-import com.lambdaschool.starthere.models.Useremail;
+import com.lambdaschool.starthere.models.*;
 import com.lambdaschool.starthere.services.RoleService;
+import com.lambdaschool.starthere.services.SocialCaseService;
 import com.lambdaschool.starthere.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -22,6 +20,9 @@ public class SeedData implements CommandLineRunner
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    SocialCaseService socialCaseService;
 
 
     @Override
@@ -77,6 +78,7 @@ public class SeedData implements CommandLineRunner
         users.add(new UserRoles(new User(), r2));
         User u5 = new User("testdog", "password", "testdog@school.lambda", users);
         u5 = userService.save(u5);
+////////
 
         System.out.println("\n*** Seed Data ***");
         System.out.println(u1);

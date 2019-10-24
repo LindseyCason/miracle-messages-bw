@@ -1,0 +1,11 @@
+-- DELETE
+-- FROM socialCase;
+-- 
+-- INSERT INTO socialCase (socialCaseFname, socialCaseLname, socialCaseAge, socialCaseHometown, socialCaseCurrentTown, socialCaseContactInfo, socialCaseNotes, socialCaseIsSensitive, socialCaseFamilyFName,socialCaseFamilyLName, socialCaseFamilyAge, socialCaseFamilyRelationship, socialCaseFamilyLastKnownLocation, socialCaseFamilyNotes )
+-- VALUES ("Jessica", "Smith", "34", "ddddd", "ttttttttt", "555-5044444-5555", "tesddddddting", false, "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX");
+-- VALUES ("Lindsey", "Jones", "34", "ddddd", "ttttttttt", "555-5044444-5555", "tesddddddting", true, "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX");
+-- VALUES ("Jonny", "Happy", "34", "ddddd", "ttttttttt", "555-5044444-5555", "tesddddddting", false, "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX");
+-- 
+-- 
+-- -- alter sequence hibernate_sequence restart with 25;
+-- 

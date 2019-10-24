@@ -50,14 +50,14 @@ public class SocialCaseController {
         return new ResponseEntity<>(userSocialCases, HttpStatus.OK);
     }
 
-    @ApiOperation(value = "Returns socialCases by page", response = SocialCase.class, responseContainer = "List")
-    @ApiResponses(value = {@ApiResponse(code = 200, message = "SocialCases Found", response = SocialCase.class),
-            @ApiResponse(code = 404, message = "SocialCases Not Found", response = ErrorDetail.class)})
-    @GetMapping(value = "/socialCases/paging", produces = {"application/json"})
-    public ResponseEntity<?> listAllSocialCasesByPage(@PageableDefault(page=0, size=5) Pageable pageable){
-        List<SocialCase> userSocialCases = socialCaseService.findAllPageable(pageable);
-        return new ResponseEntity<>( userSocialCases, HttpStatus.OK );
-    }
+//    @ApiOperation(value = "Returns socialCases by page", response = SocialCase.class, responseContainer = "List")
+//    @ApiResponses(value = {@ApiResponse(code = 200, message = "SocialCases Found", response = SocialCase.class),
+//            @ApiResponse(code = 404, message = "SocialCases Not Found", response = ErrorDetail.class)})
+//    @GetMapping(value = "/socialCases/paging", produces = {"application/json"})
+//    public ResponseEntity<?> listAllSocialCasesByPage(@PageableDefault(page=0, size=5) Pageable pageable){
+//        List<SocialCase> userSocialCases = socialCaseService.findAllPageable(pageable);
+//        return new ResponseEntity<>( userSocialCases, HttpStatus.OK );
+//    }
 
 
     @ApiOperation(value = "Deletes socialCase by id", response = SocialCase.class, responseContainer = "List")

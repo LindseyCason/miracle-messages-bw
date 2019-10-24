@@ -144,8 +144,6 @@ public class User
         return useremails;
     }
 
-    /////
-
     public List<SocialCase> getSocialCases() {
         return socialCases;
     }
@@ -154,10 +152,6 @@ public class User
         this.socialCases = socialCases;
     }
 
-
-    //If there is a user ID less than 10000 return the case list, else don't return the case list.
-
-    /////
 
     public void setUseremails(List<Useremail> useremails)
     {

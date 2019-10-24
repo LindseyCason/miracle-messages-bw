@@ -85,6 +85,11 @@ public class SocialCase {
         this.user = user;
     }
 
+
+    public SocialCase(String jessica, String smith, String s, String ddddd, String ttttttttt, String s1, String tesddddddting, boolean b, String one, String two, String three, String four, String five, String six) {
+    }
+
+
     public String getSocialCaseFamilyFName() {
         return socialCaseFamilyFName;
     }
@@ -212,4 +217,5 @@ public class SocialCase {
     public void setSocialCaseIsSensitive(boolean socialCaseIsSensitive) {
         this.socialCaseIsSensitive = socialCaseIsSensitive;
     }
+
 }

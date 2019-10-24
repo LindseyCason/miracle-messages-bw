@@ -25,9 +25,6 @@ public class SeedData implements CommandLineRunner
     @Autowired
     UserService userService;
 
-    @Autowired
-    SocialCaseService socialCaseService;
-
 
     @Override
     public void run(String[] args) throws Exception
@@ -60,29 +57,6 @@ public class SeedData implements CommandLineRunner
                              "admin@mymail.local"));
 
         userService.save(u1);
-
-//        SocialCase c1 = new SocialCase("Lindsey", "Cason", 34, "Gainesville", "NewOrleans", "555-555-5555", "testing", false);
-////
-//        socialCaseService.save( c1 );
-
-//        this.caseFname = caseFname;
-//        this.caseLname = caseLname;
-//        this.caseAge = caseAge;
-//        this.caseHometown = caseHometown;
-//        this.caseCurrentTown = caseCurrentTown;
-//        this.caseContactInfo = caseContactInfo;
-//        this.caseNotes = caseNotes;
-//        this.caseIsSensitive = false;
-//        "caseAge": 55,
-//            "caseContactInfo": "555-555-5555 or Know to frequent McDonalds on 3rd St.",
-//            "caseCurrentTown": "New Orleans, LA",
-//            "caseFname": "John",
-//            "caseHometown": "Gainesville, FL",
-//            "caseId": 143,
-//            "caseIsSensitive": true,
-//            "caseLname": "Smith",
-//            "caseNotes": "John is a veteran and visits the VA once a month around the 5th",
-//            "caseSensitive": true
 
 
         // data, user
@@ -164,5 +138,4 @@ public class SeedData implements CommandLineRunner
                                        fakeValuesService.bothify("????##@gmail.com")));
             userService.save(fakeUser);
         }
-    }
-}
+}}
